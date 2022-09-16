@@ -231,7 +231,7 @@ export PATH=$PATH:~/.cargo/bin
 
   ```bash
   sudo pacman -S ripgrep
- ```
+  ```
 
 ### Install clangt (C/C++ formatter and linter)
 
@@ -246,7 +246,7 @@ export PATH=$PATH:~/.cargo/bin
 
   ```bash
   sudo pacman -S clang
- ```
+  ```
 
 add a link to the format option file:
 
