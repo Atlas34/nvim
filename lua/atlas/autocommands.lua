@@ -15,30 +15,33 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- Disable winbar on certain filetype
-vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost" }, {
-  callback = function()
-    local winbar_filetype_exclude = {
-      "help",
-      "plug",
-      "NvimTree",
-      "Trouble",
-      "toggleterm",
-    }
+if vim.fn.has('nvim-0.8') == 1
+then
+  -- Disable winbar on certain filetype
+  vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost" }, {
+    callback = function()
+      local winbar_filetype_exclude = {
+        "help",
+        "plug",
+        "NvimTree",
+        "Trouble",
+        "toggleterm",
+      }
 
-    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
-      vim.opt_local.winbar = nil
-      return
-    end
+      if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+        vim.opt_local.winbar = nil
+        return
+      end
 
-    local value = require("atlas.winbar").gps()
+      local value = require("atlas.winbar").gps()
 
-    if value == nil then
-      value = require("atlas.winbar").filename()
-    end
+      if value == nil then
+        value = require("atlas.winbar").filename()
+      end
 
-    vim.opt_local.winbar = value
-  end,
-})
+      vim.opt_local.winbar = value
+    end,
+  })
+end
 
 
