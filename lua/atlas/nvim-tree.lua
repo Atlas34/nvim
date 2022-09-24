@@ -17,9 +17,7 @@ nvim_tree.setup {
     enable = false,
   },
   ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
+    -- "startify",
   },
   filters = {
     custom = { ".git" },
@@ -73,7 +71,6 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     -- auto_resize = true,
