@@ -60,6 +60,7 @@ vim.cmd "Plug 'filipdutescu/renamer.nvim'"
 vim.cmd "Plug 'ray-x/lsp_signature.nvim'"
 vim.cmd "Plug 'simrat39/symbols-outline.nvim'"
 vim.cmd "Plug 'b0o/SchemaStore.nvim'"
+vim.cmd "Plug 'Maan2003/lsp_lines.nvim'"
 
 -- Completion
 vim.cmd "Plug 'hrsh7th/nvim-cmp'"

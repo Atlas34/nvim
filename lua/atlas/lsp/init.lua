@@ -8,3 +8,4 @@ require "atlas.lsp.lsp-signature"
 require "atlas.lsp.lsp-installer"
 require("atlas.lsp.handlers").setup()
 require "atlas.lsp.null-ls"
+require "atlas.lsp.lsp_lines"
