@@ -51,7 +51,9 @@ vim.cmd "Plug 'nvim-telescope/telescope-fzy-native.nvim'"
 --LSP
 vim.cmd "Plug 'neovim/nvim-lspconfig'"
 -- simple to use language server installer
-vim.cmd "Plug 'williamboman/nvim-lsp-installer'"
+-- vim.cmd "Plug 'williamboman/nvim-lsp-installer'"
+vim.cmd "Plug 'williamboman/mason.nvim'"
+vim.cmd "Plug 'williamboman/mason-lspconfig.nvim'"
 -- language server settings defined in json for
 vim.cmd "Plug 'tamago324/nlsp-settings.nvim'"
 -- for formatters and linters
@@ -61,6 +63,9 @@ vim.cmd "Plug 'ray-x/lsp_signature.nvim'"
 vim.cmd "Plug 'simrat39/symbols-outline.nvim'"
 vim.cmd "Plug 'b0o/SchemaStore.nvim'"
 vim.cmd "Plug 'Maan2003/lsp_lines.nvim'"
+
+-- lua development
+vim.cmd "Plug 'folke/lua-dev.nvim'"
 
 -- Completion
 vim.cmd "Plug 'hrsh7th/nvim-cmp'"
