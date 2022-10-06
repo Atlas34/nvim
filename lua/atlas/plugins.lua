@@ -80,6 +80,8 @@ vim.cmd "Plug 'L3MON4D3/LuaSnip'"
 -- Bookmarks
 vim.cmd "Plug 'MattesGroeger/vim-bookmarks'"
 
+-- Improve loading time
+vim.cmd "Plug 'lewis6991/impatient.nvim'"
 -- Open Terminal
 vim.cmd "Plug 'akinsho/toggleterm.nvim'"
 
