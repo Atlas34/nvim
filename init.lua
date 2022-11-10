@@ -38,3 +38,5 @@ require "atlas.cmp"
 
 require "atlas.bookmarks"
 
+require "atlas.navic"
+
