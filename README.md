@@ -61,7 +61,7 @@ sudo rm -r /usr/local/share/nvim/
 
 Make sure to remove or move your current `nvim` directory located inside ~/,config
 
-**IMPORTANT** Requires [Neovim v0.7.0]](https://github.com/neovim/neovim/releases).  [Upgrade](#upgrade-to-latest-release) if you're on an earlier version. 
+**IMPORTANT** Requires [Neovim v0.8.0]](https://github.com/neovim/neovim/releases).  [Upgrade](#upgrade-to-latest-release) if you're on an earlier version. 
 
 ```bash
 git clone https://github.com/Atlas34/nvim.git ~/.config/nvim
@@ -233,7 +233,7 @@ export PATH=$PATH:~/.cargo/bin
   sudo pacman -S ripgrep
   ```
 
-### Install clangt (C/C++ formatter and linter)
+### Install clangd (C/C++ formatter and linter)
 
 - on debian distribution type:
 
