@@ -48,10 +48,21 @@ local function lsp_highlight_document(client)
   -- if client.server_capabilities.document_highlight then
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
+    vim.notify("illuminate plugins not found!")
     return
   end
   illuminate.on_attach(client)
   -- end
+end
+
+local function attach_navic(client, bufnr)
+  vim.g.navic_silence = true
+  local status_ok, navic = pcall(require, "nvim-navic")
+  if not status_ok then
+    vim.notify("nvim-navic plugins not found!")
+    return
+  end
+  navic.attach(client, bufnr)
 end
 
 local function lsp_keymaps(bufnr)
@@ -75,24 +86,25 @@ M.on_attach = function(client, bufnr)
   -- vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
 
+  lsp_keymaps(bufnr)
+  lsp_highlight_document(client)
+  attach_navic(client, bufnr)
+
   if client.name == "jdt.ls" then
     require("jdtls").setup_dap({ hotcodereplace = "auto" })
     require("jdtls.dap").setup_dap_main_class_configs()
     vim.lsp.codelens.refresh()
   end
-  lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
+  vim.notify("cmp_nvim_lsp plugins not found!")
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 function M.enable_format_on_save()
   vim.cmd([[

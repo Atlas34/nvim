@@ -26,9 +26,9 @@ local settings = {
   ui = {
     border = "rounded",
     icons = {
-      package_installed = "◍",
-      package_pending = "◍",
-      package_uninstalled = "◍",
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
     },
   },
   log_level = vim.log.levels.INFO,
@@ -36,6 +36,7 @@ local settings = {
 }
 
 mason.setup(settings)
+
 mason_lspconfig.setup {
   ensure_installed = servers,
   automatic_installation = true,
@@ -55,7 +56,7 @@ for _, server in pairs(servers) do
     capabilities = require("atlas.lsp.handlers").capabilities,
   }
 
-  server = vim.split(server, "@")[1]
+  server = vim.split(server, "@", {})[1]
 
   if server == "jsonls" then
     local jsonls_opts = require "atlas.lsp.settings.jsonls"
@@ -63,24 +64,18 @@ for _, server in pairs(servers) do
   end
 
   if server == "sumneko_lua" then
-    local l_status_ok, lua_dev = pcall(require, "lua-dev")
-    if not l_status_ok then
-      vim.notify("lua-dev Plugins not found!")
+    local sumneko_opts = require "atlas.lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+
+    local neodev_status_ok, neo_dev = pcall(require, "neodev")
+    if not neodev_status_ok then
+      vim.notify("neodev Plugins not found!")
       return
     end
-    -- local sumneko_opts = require "atlas.lsp.settings.sumneko_lua"
-    -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-    -- opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
-    local luadev = lua_dev.setup {
-      --   -- add any options here, or leave empty to use the default settings
-      -- lspconfig = opts,
-      lspconfig = {
-        on_attach = opts.on_attach,
-        capabilities = opts.capabilities,
-        --   -- settings = opts.settings,
-      },
-    }
-    lspconfig.sumneko_lua.setup(luadev)
+    local neodev_opts = require "atlas.lsp.settings.neodev"
+    neo_dev.setup(neodev_opts)
+
+    lspconfig.sumneko_lua.setup(opts)
     goto continue
   end
 

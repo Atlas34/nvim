@@ -17,11 +17,8 @@ require 'atlas.JustBlack'
 -- Pluggins
 require "atlas.lualine"
 require "atlas.tabline"
-require "atlas.bufferLine"
 require "atlas.telescope"
 require "atlas.treesitter"
-require "atlas.gps"
-require "atlas.winbar"
 require "atlas.todo-comments"
 require "atlas.colorizer"
 require "atlas.notify"

@@ -17,6 +17,7 @@ local Black2 = '#200a0e'
 local Black3 = '#10130b'
 local Black4 = '#1d1f28'
 local Black5 = '#232638'
+local Blue = '#0077ff'
 local Cyan = '#00ffff'
 local CyanLight = '#7EFFFF'
 local Fuchsia = '#FF0077'
@@ -74,12 +75,44 @@ highlight('Visual', Black5, nil, nil)
 highlight('CursorLine', Black1, nil, nil)
 highlight('ColorColumn', Black5, nil, nil)
 highlight('SignColumn', JustBlack, nil, nil)
-highlight('LineNr', nil, Black4, nil)
+highlight('LineNr', nil, Grey1, nil)
 highlight('TabLine', JustBlack, Grey3, nil)
 highlight('TabLineSel', White, nil, nil)
 highlight('TabLineFill', JustBlack, Grey3, nil)
 highlight('TSPunctDelimiter', nil, Grey5, nil)
 
+
+-- navic
+highlight('NavicIconsFile', nil, Grey2, nil)
+highlight('NavicText', nil, Grey4, nil)
+highlight('NavicIconsModule', nil, Yellow, nil)
+highlight('NavicIconsNamespace', nil, Grey4, nil)
+highlight('NavicIconsPackage', nil, Grey4, nil)
+highlight('NavicIconsClass', nil, Orange, nil)
+highlight('NavicIconsMethod', nil, Blue, nil)
+highlight('NavicIconsProperty', nil, GreenBlue, nil)
+highlight('NavicIconsField', nil, GreenBlue, nil)
+highlight('NavicIconsConstructor', nil, Orange, nil)
+highlight('NavicIconsEnum', nil, Orange, nil)
+highlight('NavicIconsInterface', nil, Orange, nil)
+highlight('NavicIconsFunction', nil, Blue, nil)
+highlight('NavicIconsVariable', nil, Fuchsia, nil)
+highlight('NavicIconsConstant', nil, Fuchsia, nil)
+highlight('NavicIconsString', nil, GreenBlue, nil)
+highlight('NavicIconsNumber', nil, Orange, nil)
+highlight('NavicIconsBoolean', nil, Orange, nil)
+highlight('NavicIconsArray', nil, Orange, nil)
+highlight('NavicIconsObject', nil, Orange, nil)
+highlight('NavicIconsKey', nil, Purple, nil)
+highlight('NavicIconsKeyword', nil, Purple, nil)
+highlight('NavicIconsNull', nil, Orange, nil)
+highlight('NavicIconsEnumMember', nil, GreenBlue, nil)
+highlight('NavicIconsStruct', nil, Orange, nil)
+highlight('NavicIconsEvent', nil, Orange, nil)
+highlight('NavicIconsOperator', nil, Grey4, nil)
+highlight('NavicIconsTypeParameter', nil, GreenBlue, nil)
+highlight('NavicSeparator', nil, Grey4, nil)
+    --
 link('TSComment', 'Comment')
 link('TSInclude', 'Include')
 link('TSRepeat', 'Repeat')

@@ -1,12 +1,12 @@
 return {
   kind = {
     Text = "",
-    -- Method = "m",
-    -- Function = "",
-    -- Constructor = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
+    Method = "m",
+    Function = "",
+    Constructor = "",
+    -- Method = "",
+    -- Function = "",
+    -- Constructor = "",
     Field = "",
     -- Variable = "",
     Variable = "",
@@ -37,8 +37,10 @@ return {
     Array = "",
     Number = "",
     String = "",
-    Boolean = "蘒",
+    Boolean = "",
     Object = "",
+    Key = "",
+    Null = "ﳠ",
   },
   documents = {
     File = "",
@@ -47,6 +49,7 @@ return {
     OpenFolder = "",
   },
   git = {
+    Logo = "",
     Add = "",
     Mod = "",
     Remove = "",
