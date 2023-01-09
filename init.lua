@@ -11,8 +11,11 @@ require "atlas.settings"
 require "atlas.keymaps"
 require "atlas.icons"
 
+-- Pluggin notification
+require "atlas.notify"
+
 -- Themes
-require 'atlas.JustBlack'
+require 'atlas.just-black'
 
 -- Pluggins
 require "atlas.lualine"
@@ -21,7 +24,6 @@ require "atlas.telescope"
 require "atlas.treesitter"
 require "atlas.todo-comments"
 require "atlas.colorizer"
-require "atlas.notify"
 require "atlas.illuminate"
 require "atlas.nvim-tree"
 require "atlas.toggleterm"

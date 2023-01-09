@@ -46,83 +46,86 @@ return packer.startup(function(use)
   -- Icons
   use 'nvim-tree/nvim-web-devicons' -- Icons with colors
 
+  -- Theme: Just-Black
+  use "Atlas34/just-black.nvim"
+
   -- Status Bar
   use 'nvim-lualine/lualine.nvim'
 
--- File Explorer
-use 'kyazdani42/nvim-tree.lua'
+  -- File Explorer
+  use 'kyazdani42/nvim-tree.lua'
 
--- Treesitter
-use 'nvim-treesitter/nvim-treesitter'
-use 'nvim-treesitter/nvim-treesitter-context'
-use 'nvim-treesitter/playground'
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-context'
+  use 'nvim-treesitter/playground'
 
--- Display colors
-use 'norcalli/nvim-colorizer.lua'
+  -- Display colors
+  use 'norcalli/nvim-colorizer.lua'
 
---bufferLine
-use 'kdheepak/tabline.nvim'
+  --bufferLine
+  use 'kdheepak/tabline.nvim'
 
---Illuminate
-use 'RRethy/vim-illuminate'
+  --Illuminate
+  use 'RRethy/vim-illuminate'
 
---Notif
-use 'rcarriga/nvim-notify'
+  --Notif
+  use 'rcarriga/nvim-notify'
 
--- TODO Comments
-use 'folke/todo-comments.nvim'
+  -- TODO Comments
+  use 'folke/todo-comments.nvim'
 
--- Comments
-use 'numToStr/Comment.nvim'
+  -- Comments
+  use 'numToStr/Comment.nvim'
 
--- Markdown
-use 'tpope/vim-markdown'
+  -- Markdown
+  use 'tpope/vim-markdown'
 
--- Telescope
-use 'nvim-lua/popup.nvim'
-use 'nvim-lua/plenary.nvim'
-use 'nvim-telescope/telescope.nvim'
-use 'tom-anders/telescope-vim-bookmarks.nvim'
-use 'nvim-telescope/telescope-fzy-native.nvim'
+  -- Telescope
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'tom-anders/telescope-vim-bookmarks.nvim'
+  use 'nvim-telescope/telescope-fzy-native.nvim'
 
---LSP
--- simple to use language server installer
-use 'williamboman/mason.nvim'
-use 'williamboman/mason-lspconfig.nvim'
-use 'neovim/nvim-lspconfig'
--- language server settings defined in json for
-use 'tamago324/nlsp-settings.nvim'
--- for formatters and linters
-use 'jose-elias-alvarez/null-ls.nvim'
-use 'filipdutescu/renamer.nvim'
-use 'ray-x/lsp_signature.nvim'
-use 'simrat39/symbols-outline.nvim'
-use 'b0o/SchemaStore.nvim'
-use 'Maan2003/lsp_lines.nvim'
--- lua development
-use 'folke/neodev.nvim'
+  --LSP
+  -- simple to use language server installer
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
+  -- language server settings defined in json for
+  use 'tamago324/nlsp-settings.nvim'
+  -- for formatters and linters
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'filipdutescu/renamer.nvim'
+  use 'ray-x/lsp_signature.nvim'
+  use 'simrat39/symbols-outline.nvim'
+  use 'b0o/SchemaStore.nvim'
+  use 'Maan2003/lsp_lines.nvim'
+  -- lua development
+  use 'folke/neodev.nvim'
 
--- Completion
-use 'hrsh7th/nvim-cmp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/cmp-nvim-lua'
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-cmdline'
-use 'saadparwaiz1/cmp_luasnip'
-use 'L3MON4D3/LuaSnip'
+  -- Completion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-cmdline'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip'
 
--- navic
-use 'SmiteshP/nvim-navic'
---
--- Bookmarks
-use 'MattesGroeger/vim-bookmarks'
+  -- navic
+  use 'SmiteshP/nvim-navic'
+  --
+  -- Bookmarks
+  use 'MattesGroeger/vim-bookmarks'
 
--- Improve loading time
-use 'lewis6991/impatient.nvim'
+  -- Improve loading time
+  use 'lewis6991/impatient.nvim'
 
--- Open Terminal
-use 'akinsho/toggleterm.nvim'
+  -- Open Terminal
+  use 'akinsho/toggleterm.nvim'
 
 if PACKER_BOOTSTRAP then
     require("packer").sync()

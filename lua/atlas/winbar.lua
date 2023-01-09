@@ -50,6 +50,7 @@ M.get_filename = function()
       file_icon_color = default_file_icon_color
     end
 
+    -- tests
     local buf_ft = vim.bo.filetype
 
     if buf_ft == "dapui_breakpoints" then
