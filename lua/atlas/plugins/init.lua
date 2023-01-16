@@ -76,6 +76,13 @@ return {
   --LSP
   -- simple to language server installer
   {
+    'j-hui/fidget.nvim',
+    lazy = true,
+    config = function()
+      require"fidget".setup{}
+    end,
+  },
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
       'williamboman/mason.nvim',
