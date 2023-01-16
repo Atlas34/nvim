@@ -11,16 +11,9 @@ if not status_ok_1 then
 end
 
 local servers = {
-  "cssls",
-  "cssmodules_ls",
-  "emmet_ls",
   "sumneko_lua",
-  "html",
-  "jsonls",
-  "solc",
   "pyright",
   "clangd",
-  "tsserver"
 }
 
 local settings = {
