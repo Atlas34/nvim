@@ -39,9 +39,6 @@ return {
     },
   },
 
-  -- Display colors
-  'norcalli/nvim-colorizer.lua',
-
   --bufferLine
   'kdheepak/tabline.nvim',
 
@@ -55,10 +52,10 @@ return {
   'folke/todo-comments.nvim',
 
   -- Comments
-  {
-    'numToStr/Comment.nvim',
-    lazy = true
-  },
+  'numToStr/Comment.nvim',
+
+  -- Colorizer
+  'norcalli/nvim-colorizer.lua',
 
   -- Markdown
   'tpope/vim-markdown',

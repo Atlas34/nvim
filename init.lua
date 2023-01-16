@@ -27,7 +27,7 @@ require "atlas.colorizer"
 require "atlas.illuminate"
 --require "atlas.nvim-tree"
 --require "atlas.toggleterm"
---require "atlas.comment"
+require "atlas.comment"
 require "atlas.markdown"
 
 -- LSP
