@@ -55,7 +55,10 @@ return {
   'folke/todo-comments.nvim',
 
   -- Comments
-  'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
+    lazy = true
+  },
 
   -- Markdown
   'tpope/vim-markdown',
@@ -110,13 +113,13 @@ return {
   'SmiteshP/nvim-navic',
   --
   -- Bookmarks
-  'MattesGroeger/vim-bookmarks',
+  {
+    'MattesGroeger/vim-bookmarks',
+    lazy = true,
+  },
 
   -- Improve loading time
   'lewis6991/impatient.nvim',
-
-  -- Open Terminal
-  --'akinsho/toggleterm.nvim',
 
   {
     "dstein64/vim-startuptime",
