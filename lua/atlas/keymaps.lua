@@ -5,8 +5,8 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap , as leader key
 keymap("", ",", "<Nop>", opts)
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+-- vim.g.mapleader = ","
+-- vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n",

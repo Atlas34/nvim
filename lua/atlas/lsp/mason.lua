@@ -19,7 +19,8 @@ local servers = {
   "jsonls",
   "solc",
   "pyright",
-  "clangd"
+  "clangd",
+  "tsserver"
 }
 
 local settings = {
