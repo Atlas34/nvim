@@ -100,5 +100,6 @@ return {
     Squirrel = "",
     Tag = "",
     Watch = "",
+    lsp = '力',
   },
 }

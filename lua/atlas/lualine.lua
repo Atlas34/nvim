@@ -93,6 +93,76 @@ local diagnostics = {
   always_visible = true,
 }
 
+
+local list_registered_formatter = function(filetype)
+  local s = require "null-ls.sources"
+  local available_sources = s.get_available(filetype)
+  local registered = {}
+  for _, source in ipairs(available_sources) do
+    for method in pairs(source.methods) do
+      registered[method] = registered[method] or {}
+      table.insert(registered[method], source.name)
+    end
+  end
+  return registered or {}
+end
+
+local list_registered_linter = function(filetype)
+  local null_ls = require "null-ls"
+  local alternative_methods = {
+  null_ls.methods.DIAGNOSTICS,
+  null_ls.methods.DIAGNOSTICS_ON_OPEN,
+  null_ls.methods.DIAGNOSTICS_ON_SAVE,
+}
+  local registered_providers = list_registered_formatter(filetype)
+  local providers_for_methods = vim.tbl_flatten(vim.tbl_map(function(m)
+    return registered_providers[m] or {}
+  end, alternative_methods))
+
+  return providers_for_methods
+end
+
+local lsp = {
+  function(msg)
+    msg = msg or "No LSP"
+
+    local buf_clients = vim.lsp.buf_get_clients()
+
+    if next(buf_clients) == nil then
+      -- TODO: clean up this if statement
+      if type(msg) == "boolean" or #msg == 0 then
+        return "No LSP"
+      end
+      return msg
+    end
+    local buf_ft = vim.bo.filetype
+    local buf_client_names = {}
+
+    -- add client
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" then
+        table.insert(buf_client_names, client.name)
+      end
+    end
+
+    -- add formatter
+    local supported_formatters = list_registered_formatter(buf_ft)
+    vim.list_extend(buf_client_names, supported_formatters)
+
+    -- add linter
+    local supported_linters = list_registered_linter(buf_ft)
+    vim.list_extend(buf_client_names, supported_linters)
+
+    local unique_client_names = vim.fn.uniq(buf_client_names)
+    local language_servers = table.concat(unique_client_names, ", ")
+
+    return language_servers
+  end,
+  icon = icons.misc.lsp .. ":",
+  color = { gui = "bold" },
+  cond = hide_in_width,
+}
+
 local diff = {
   "diff",
   colored = true,
@@ -143,7 +213,6 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    -- lualine_a = { branch, diagnostics },
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
@@ -157,19 +226,12 @@ lualine.setup {
             fg = "#a70089"
           end -- readonly
           vim.cmd("hi! lualine_filename_status guifg=" .. fg)
-          -- return "%t %m"
           return "%m"
         end,
-        -- color = "lualine_filename_status",
       },
     },
-    -- lualine_c = {},
-    -- lualine_c = {
-    --   { nvim_gps, cond = hide_in_width },
-    -- },
-    -- lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_x = { },
-    lualine_y = { diff, spaces, "encoding", filetype },
+    lualine_x = { diff, lsp },
+    lualine_y = { spaces, "encoding", filetype },
     lualine_z = { pos },
   },
   inactive_sections = {
