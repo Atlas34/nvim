@@ -11,7 +11,7 @@ if not status_ok_1 then
 end
 
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "pyright",
   "clangd",
 }
@@ -57,8 +57,8 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   end
 
-  if server == "sumneko_lua" then
-    local sumneko_opts = require "atlas.lsp.settings.sumneko_lua"
+  if server == "lua_ls" then
+    local sumneko_opts = require "atlas.lsp.settings.lua_ls"
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 
     local neodev_status_ok, neo_dev = pcall(require, "neodev")
@@ -69,7 +69,7 @@ for _, server in pairs(servers) do
     local neodev_opts = require "atlas.lsp.settings.neodev"
     neo_dev.setup(neodev_opts)
 
-    lspconfig.sumneko_lua.setup(opts)
+    lspconfig.lua_ls.setup(opts)
     goto continue
   end
 
