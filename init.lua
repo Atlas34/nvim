@@ -4,38 +4,65 @@ require "atlas.autocommands"
 
 require "atlas.functions"
 
--- Source Plugins
-require "atlas.lazy"
-
 require "atlas.settings"
 require "atlas.keymaps"
 require "atlas.icons"
 
--- Pluggin notification
-require "atlas.notify"
+-- ----------
+-- Plugins
+-- ----------
+
+-- Notification
+Spec "atlas.notify"
+Spec "atlas.dressing"
+-- Spec "atlas.noice"
 
 -- Themes
-require 'atlas.just-black'
+Spec 'atlas.just-black'
 
--- Pluggins
-require "atlas.lualine"
-require "atlas.tabline"
---require "atlas.telescope"
---require "atlas.treesitter"
-require "atlas.todo-comments"
-require "atlas.colorizer"
-require "atlas.illuminate"
---require "atlas.nvim-tree"
---require "atlas.toggleterm"
-require "atlas.comment"
-require "atlas.markdown"
+-- Status Line
+Spec "atlas.lualine"
+
+-- Buffer Line
+Spec "atlas.tabline"
+
+-- Telescope
+Spec "atlas.telescope"
+
+-- Treesitter
+Spec "atlas.treesitter"
+
+-- TODO Comments
+Spec "atlas.todo-comments"
+Spec "atlas.colorizer"
+Spec "atlas.illuminate"
+Spec "atlas.nvim-tree"
+Spec "atlas.toggleterm"
+Spec "atlas.comment"
+Spec "atlas.eyeliner"
+Spec "atlas.project"
+-- require "atlas.markdown"
+
+-- Navic
+-- Spec "atlas.navbuddy"
+Spec "atlas.navic"
 
 -- LSP
-require "atlas.lsp.init"
+Spec "atlas.lsp.mason"
+Spec "atlas.schemastore"
+Spec "atlas.lsp"
+Spec "atlas.lsp.lsp-signature"
+Spec "atlas.lsp.null-ls"
+Spec "atlas.lsp.lsp_lines"
+Spec "atlas.fidget"
 
-require "atlas.cmp"
+Spec "atlas.cmp"
 
-require "atlas.bookmarks"
+-- Bookmarks
+Spec "atlas.bookmarks"
 
-require "atlas.navic"
+-- Code Action
+Spec "atlas.lightbulb"
 
+-- Source Plugins
+require "atlas.lazy"

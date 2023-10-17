@@ -1,12 +1,10 @@
 local status_ok, schemastore = pcall(require, "schemastore")
 if not status_ok then
-  return
+  vim.notify("schemastore plugins not found!")
+  return nil
 end
 
 return {
-  init_options = {
-    provideFormatter = false,
-  },
   settings = {
     json = {
       schemas = schemastore.json.schemas(),
@@ -14,11 +12,11 @@ return {
   },
   setup = {
     commands = {
-      -- Format = {
-      --   function()
-      --     vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
-      --   end,
-      -- },
+      format = {
+        function()
+          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
+        end,
+      },
     },
   },
 }
