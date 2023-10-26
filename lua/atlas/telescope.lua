@@ -12,6 +12,7 @@ local M = {
     { '<leader>m', ':lua require("telescope.builtin").buffers()<CR>', desc = "Telescope Find Buffers", mode = "n", silent = true},
     { '<leader>o', ':lua require("telescope.builtin").find_files()<CR>', desc = "Telescope Find Files", mode = "n", silent = true},
     { '<leader>f', ':lua require("telescope.builtin").grep_string({ search = vim.fn.input(" > ")})<CR>', desc = "Telescope Find String", mode = "n", silent = true},
+    { '<leader>F', ':lua require("telescope.builtin").grep_string { search = vim.fn.expand("<cword>") }<CR>', desc = "Telescope Find String under the cursor", mode = "n", silent = true},
     { '<leader>h', ':lua require("telescope.builtin").help_tags()<CR>', desc = "Telescope Find Help", mode = "n", silent = true},
     { '<leader>k', ':lua require("telescope.builtin").keymaps()<CR>', desc = "Telescope Find keymaps", mode = "n", silent = true},
   }
