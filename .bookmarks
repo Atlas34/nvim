@@ -1,1 +1,0 @@
-{"data":{"\/home\/atlas\/.config\/nvim\/lua\/atlas\/bufferLine.lua":{"20":{"m":"    modified_icon = \"●\","},"36":{"m":"    max_prefix_length = 30, -- prefix used when a buffer is de-duplicated","a":"@t test"},"24":{"m":"    right_trunc_marker = \"\",","a":"Test"}}}}
