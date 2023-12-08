@@ -23,6 +23,7 @@ local options = {
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
+  shiftround = true,                       -- Round indent
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 2,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
@@ -43,6 +44,10 @@ vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
   vim.opt[k] = v
+end
+
+if vim.fn.has("nvim-0.10") == 1 then
+  vim.opt.smoothscroll = true
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"

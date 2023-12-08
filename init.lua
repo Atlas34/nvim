@@ -32,6 +32,10 @@ Spec "atlas.telescope"
 -- Treesitter
 Spec "atlas.treesitter"
 
+-- Indent Line
+Spec "atlas.indentline"
+Spec "atlas.mini-identscope"
+
 -- TODO Comments
 Spec "atlas.todo-comments"
 Spec "atlas.colorizer"
