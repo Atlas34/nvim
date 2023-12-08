@@ -6,12 +6,13 @@ local M = {
 
 
 function M.config()
-  local status_ok, justBlack = pcall(require, "just-black")
+  local status_ok, _ = pcall(require, "just-black")
   if not status_ok then
     vim.notify("Just-Black Plugins not found!")
     return nil
   end
-  justBlack.setup({})
+
+  vim.cmd('colorscheme just-black')
 end
 
 return M

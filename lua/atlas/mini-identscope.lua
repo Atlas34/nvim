@@ -1,7 +1,7 @@
 
 local M = {
   'echasnovski/mini.indentscope',
-  event = 'VeryLazy',
+  event = { "BufReadPre", "BufNewFile" },
   version = false
 }
 

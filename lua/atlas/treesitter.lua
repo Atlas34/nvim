@@ -1,6 +1,6 @@
 local M = {
   'nvim-treesitter/nvim-treesitter',
-  build = ":TSUpdate",
+  -- build = ":TSUpdate",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     {
@@ -47,7 +47,8 @@ function M.config()
       "vim",
       "yaml",
     },
-    sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+    additional_vim_regex_highlighting = false,
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
       -- use_languagetree = true,

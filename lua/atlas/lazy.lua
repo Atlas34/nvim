@@ -20,6 +20,9 @@ end
 
 require("lazy").setup {
   spec = LAZY_PLUGIN_SPEC,
+  default = {
+    lazy = true,
+  },
   install = {
     colorscheme = { "just-black" },
   },
@@ -29,5 +32,20 @@ require("lazy").setup {
   change_detection = {
     enabled = true,
     notify = false,
+  },
+  performance = {
+    rtp = {
+      ---@type string[] list any plugins you want to disable here
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
   },
 }
